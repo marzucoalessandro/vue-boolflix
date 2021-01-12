@@ -26,26 +26,25 @@ let app = new Vue({
       .then(item => {
 
         let result = item.data.results
-        // console.log(result);
 
-        let x = result.map(item => {
-          let y = Math.ceil(item.vote_average / 2)
-          // console.log(y);
-          return y
-
-        })
-        console.log(x);
+        // milestone 2
+        this.myNewFilmList = result
+        this.myNewFilmList.forEach(item => {
+          let x = Math.ceil(item.vote_average / 2);
+          return item.stars = x
 
         });
 
 
-
-      }
-
-
-
-    // milestone 2
+      })
+    }
 
   }
+
+
+
+
+
+
 
 });

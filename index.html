@@ -20,11 +20,13 @@
 
     <!-- creiamo una semplice lista per stampare i valori che ci interessano -->
     <div class="results" v-for="item in myNewFilmList">
-      <ul >
+      <ul>
+
         <li>Titolo: {{item.title}}</li>
         <li>Titolo originale: {{item.original_title}}</li>
         <li>lingua: {{item.original_language}}</li>
-        <li>Voto: {{item.vote_average}}</li>
+        <li>Voto: {{item.stars}}</li>
+
       </ul>
 
 
