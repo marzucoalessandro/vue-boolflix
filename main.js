@@ -21,7 +21,7 @@ let app = new Vue({
       axios.get(this.newSearch)
       .then(item => {
         this.myNewFilmList = item.data.results
-
+          console.log(this.myNewFilmList);
       })
     }
   }
