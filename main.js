@@ -6,6 +6,7 @@ let app = new Vue({
   // inoltre tramite v-model prenderemo la strnga film per la ricerca
 
   data: {
+    // milestone 1
     apiKey: "4f0c8e4dcdaf00015ee0cf645edae2b2",
     movie: "",
     myNewFilmList: [],
@@ -15,15 +16,36 @@ let app = new Vue({
   },
 
   methods: {
+    // milestone1
+
     getList(){
       // trasformiamo in stringa di ricerca uri + apiKey + movie
       this.newSearch = this.uri + this.apiKey + this.query + this.movie;
+      // a qst punto fa funzione fa una richiesta API
       axios.get(this.newSearch)
       .then(item => {
-        this.myNewFilmList = item.data.results
-          console.log(this.myNewFilmList);
-      })
-    }
+
+        let result = item.data.results
+        // console.log(result);
+
+        let x = result.map(item => {
+          let y = Math.ceil(item.vote_average / 2)
+          // console.log(y);
+          return y
+
+        })
+        console.log(x);
+
+        });
+
+
+
+      }
+
+
+
+    // milestone 2
+
   }
 
 });
