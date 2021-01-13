@@ -12,7 +12,8 @@ let app = new Vue({
     myNewFilmList: [],
     query: "&query=",
     uri: "https://api.themoviedb.org/3/search/movie?api_key=",
-    newSearch: ""
+    newSearch: "",
+
   },
 
   methods: {
@@ -21,30 +22,25 @@ let app = new Vue({
     getList(){
       // trasformiamo in stringa di ricerca uri + apiKey + movie
       this.newSearch = this.uri + this.apiKey + this.query + this.movie;
-      // a qst punto fa funzione fa una richiesta API
+      // a qst punto la funzione fa una richiesta API
       axios.get(this.newSearch)
       .then(item => {
 
         let result = item.data.results
+        this.myNewFilmList = result
 
         // milestone 2
-        this.myNewFilmList = result
+        // andiamo a trasformare il ns voto da decimale a intero;
         this.myNewFilmList.forEach(item => {
           let x = Math.ceil(item.vote_average / 2);
           return item.stars = x
 
         });
 
-
       })
+
     }
 
   }
-
-
-
-
-
-
 
 });
