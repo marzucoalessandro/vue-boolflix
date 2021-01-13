@@ -13,6 +13,7 @@ let app = new Vue({
     myNewseriesList: [],
     query: "&query=",
     uriFilm: "https://api.themoviedb.org/3/search/movie?api_key=",
+    // milestone 2
     uriSeries: "https://api.themoviedb.org/3/search/tv?api_key=",
     newFilmSearch: "",
     newSeriesTvSearch: "",
@@ -23,6 +24,7 @@ let app = new Vue({
        fr: "https://flagcdn.com/w80/fr.png",
        es: "https://flagcdn.com/w80/es.png"
       },
+      // milestone 3
       uriCover: "https://image.tmdb.org/t/p/w342"
 
   },

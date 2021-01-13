@@ -20,7 +20,7 @@
     </header>
 
     <!-- creiamo una semplice lista per stampare i valori che ci interessano -->
-    <div class="results" v-for="item in myNewFilmList">
+    <div class="results" v-for="item in myNewFilmList" :class="(item.poster_path == null) ? 'display' : ''">
       <ul>
 
         <li>Titolo: {{item.title}}</li>
@@ -31,7 +31,7 @@
 
           <img v-if="name == item.original_language" :src="value" alt="bandiera della nazione">
         </div>
-        <img :src="uriCover + item.poster_path" alt="">
+        <img :src="uriCover + item.poster_path" alt="cover del film" >
         <!-- v-for per ricavare la stampa delle stelle sia piene che vuote -->
         <li>Voto: <i class="fas fa-star" v-for="i in item.stars"></i><i class="far fa-star" v-for="i in (5 - item.stars)"></i></li>
 
@@ -42,7 +42,7 @@
 
     <!-- apriamo un nuovo contenitore per le serie tv -->
 
-    <div class="results" v-for="series in myNewseriesList">
+    <div class="results" v-for="series in myNewseriesList" :class="(series.poster_path == null) ? 'display' : ''">
       <ul>
         <li>titolo: {{series.name}}</li>
         <li>Titolo originale: {{series.original_name}}</li>
@@ -52,7 +52,7 @@
 
           <img v-if="name == series.original_language" :src="value" alt="bandiera della nazione">
         </div>
-        <img :src="uriCover + series.poster_path" alt="">
+        <img :src="uriCover + series.poster_path" alt="cover della serie tv">
         <li>Voto: <i class="fas fa-star" v-for="i in series.stars"></i><i class="far fa-star" v-for="i in (5 - series.stars)"></i></li>
       </ul>
     </div>
