@@ -22,8 +22,8 @@ let app = new Vue({
        it: "https://flagcdn.com/w80/it.png",
        fr: "https://flagcdn.com/w80/fr.png",
        es: "https://flagcdn.com/w80/es.png"
-      }
-
+      },
+      uriCover: "https://image.tmdb.org/t/p/w342"
 
   },
 
@@ -57,7 +57,17 @@ let app = new Vue({
       .then(response => {
         let result = response.data.results
         this.myNewseriesList = result
+
+
+        // andiamo a trasformare il ns voto da decimale a intero;
+        this.myNewseriesList.forEach(item => {
+          let x = Math.ceil(item.vote_average / 2);
+          return item.stars = x
+        });
+
       })
+
+      // la milestone 3 non contiene methods!
     }
 
   }

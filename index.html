@@ -31,7 +31,7 @@
 
           <img v-if="name == item.original_language" :src="value" alt="bandiera della nazione">
         </div>
-
+        <img :src="uriCover + item.poster_path" alt="">
         <!-- v-for per ricavare la stampa delle stelle sia piene che vuote -->
         <li>Voto: <i class="fas fa-star" v-for="i in item.stars"></i><i class="far fa-star" v-for="i in (5 - item.stars)"></i></li>
 
@@ -52,8 +52,8 @@
 
           <img v-if="name == series.original_language" :src="value" alt="bandiera della nazione">
         </div>
-
-        <!-- <li>Voto: <i class="fas fa-star" v-for="i in item.stars"></i><i class="far fa-star" v-for="i in (5 - item.stars)"></i></li> -->
+        <img :src="uriCover + series.poster_path" alt="">
+        <li>Voto: <i class="fas fa-star" v-for="i in series.stars"></i><i class="far fa-star" v-for="i in (5 - series.stars)"></i></li>
       </ul>
     </div>
 
