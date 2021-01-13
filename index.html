@@ -28,7 +28,7 @@
         <li>lingua: {{item.original_language}}</li>
         <!-- stampiamo a video la bandiera -->
         <div v-for="(value, name, index) in flags">
-                
+
           <img v-if="name == item.original_language" :src="value" alt="bandiera della nazione">
         </div>
 
@@ -38,6 +38,23 @@
       </ul>
 
 
+    </div>
+
+    <!-- apriamo un nuovo contenitore per le serie tv -->
+
+    <div class="results" v-for="series in myNewseriesList">
+      <ul>
+        <li>titolo: {{series.name}}</li>
+        <li>Titolo originale: {{series.original_name}}</li>
+        <li>Lingua: {{series.original_language}}</li>
+        <!-- stampiamo a video la bandiera -->
+        <div v-for="(value, name, index) in flags">
+
+          <img v-if="name == series.original_language" :src="value" alt="bandiera della nazione">
+        </div>
+
+        <!-- <li>Voto: <i class="fas fa-star" v-for="i in item.stars"></i><i class="far fa-star" v-for="i in (5 - item.stars)"></i></li> -->
+      </ul>
     </div>
 
   </div>

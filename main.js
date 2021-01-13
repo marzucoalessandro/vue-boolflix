@@ -10,9 +10,12 @@ let app = new Vue({
     apiKey: "4f0c8e4dcdaf00015ee0cf645edae2b2",
     movie: "",
     myNewFilmList: [],
+    myNewseriesList: [],
     query: "&query=",
-    uri: "https://api.themoviedb.org/3/search/movie?api_key=",
-    newSearch: "",
+    uriFilm: "https://api.themoviedb.org/3/search/movie?api_key=",
+    uriSeries: "https://api.themoviedb.org/3/search/tv?api_key=",
+    newFilmSearch: "",
+    newSeriesTvSearch: "",
     flags:
       {us: "https://flagcdn.com/w80/us.png",
        en: "https://flagcdn.com/w80/gb.png",
@@ -28,10 +31,10 @@ let app = new Vue({
     // milestone1
 
     getList(){
-      // trasformiamo in stringa di ricerca uri + apiKey + movie
-      this.newSearch = this.uri + this.apiKey + this.query + this.movie;
+      // trasformiamo in stringa di ricerca uri + apiKey + query + movie
+      this.newFilmSearch = this.uriFilm + this.apiKey + this.query + this.movie;
       // a qst punto la funzione fa una richiesta API
-      axios.get(this.newSearch)
+      axios.get(this.newFilmSearch)
       .then(item => {
 
         let result = item.data.results
@@ -42,11 +45,19 @@ let app = new Vue({
         this.myNewFilmList.forEach(item => {
           let x = Math.ceil(item.vote_average / 2);
           return item.stars = x
-
         });
-
       })
 
+
+
+      // nuova richiesta ad axios per le serie tv;
+      // trasformiamo in stringa di ricerca uri + apiKey + query + movie
+      this.newSeriesTvSearch = this.uriSeries + this.apiKey + this.query + this.movie;
+      axios.get(this.newSeriesTvSearch)
+      .then(response => {
+        let result = response.data.results
+        this.myNewseriesList = result
+      })
     }
 
   }
