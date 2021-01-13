@@ -13,6 +13,14 @@ let app = new Vue({
     query: "&query=",
     uri: "https://api.themoviedb.org/3/search/movie?api_key=",
     newSearch: "",
+    flags:
+      {us: "https://flagcdn.com/w80/us.png",
+       en: "https://flagcdn.com/w80/gb.png",
+       it: "https://flagcdn.com/w80/it.png",
+       fr: "https://flagcdn.com/w80/fr.png",
+       es: "https://flagcdn.com/w80/es.png"
+      }
+
 
   },
 

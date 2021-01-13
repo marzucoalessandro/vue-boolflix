@@ -26,6 +26,13 @@
         <li>Titolo: {{item.title}}</li>
         <li>Titolo originale: {{item.original_title}}</li>
         <li>lingua: {{item.original_language}}</li>
+        <!-- stampiamo a video la bandiera -->
+        <div v-for="(value, name, index) in flags">
+                
+          <img v-if="name == item.original_language" :src="value" alt="bandiera della nazione">
+        </div>
+
+        <!-- v-for per ricavare la stampa delle stelle sia piene che vuote -->
         <li>Voto: <i class="fas fa-star" v-for="i in item.stars"></i><i class="far fa-star" v-for="i in (5 - item.stars)"></i></li>
 
       </ul>
