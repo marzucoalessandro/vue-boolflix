@@ -20,7 +20,7 @@
         <input type="text" v-model="movie">
       </div>
     </header>
-
+    <main>
     <!-- creiamo una semplice lista per stampare i valori che ci interessano -->
     <!-- se non ci sono le copertine dei nostri film questi verranno esclusi dalla renderizzazione -->
     <div class="results" v-for="item in myNewFilmList" :class="(item.poster_path == null) ? 'displaynone' : ''">
@@ -58,10 +58,10 @@
 
       </div>
       <img :src="uriCover + series.poster_path" alt="cover della serie tv">
-      <li>Voto: <i class="fas fa-star" v-for="i in series.stars"></i><i class="far fa-star" v-for="i in (5 - series.stars)"></i></li>
+      <p>Voto: <i class="fas fa-star" v-for="i in series.stars"></i><i class="far fa-star" v-for="i in (5 - series.stars)"></i></p>
 
     </div>
-
+    </main>
   </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
