@@ -44,13 +44,16 @@ input{
 }
 
 p, h3{
-  width: 350px;
+  width: 320px;
+  color: white;
+  margin-bottom: 10px;
 }
 
 
 
 .results{
-  padding: 30px;
+  padding: 30px 50px;
+  position: relative;
 }
 
 .displaynone{
@@ -58,5 +61,17 @@ p, h3{
 }
 
 .cover{
-  border: 3px solid white;
+  border: 3px solid lightgrey;
+}
+
+
+.gold{
+  color: gold;
+}
+
+.show{
+  position: absolute;
+  top: 100px;
+  left: 35px;
+  display: none;
 }

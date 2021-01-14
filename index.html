@@ -26,31 +26,35 @@
       <!-- se non ci sono le copertine dei nostri film questi verranno esclusi dalla renderizzazione -->
       <div class="results" v-for="item in myNewFilmList" :class="(item.poster_path == null) ? 'displaynone' : ''">
         <img class="cover" :src="uriCover + item.poster_path" alt="cover del film" >
-
-        <h3>Titolo: {{item.title}}</h3>
-        <p>Titolo originale: {{item.original_title}}</p>
-        <p>Lingua: {{item.original_language}}</p>
-        <!-- stampiamo a video la bandiera -->
-        <div v-for="(value, name, index) in flags">
-          <img v-if="name == item.original_language" :src="value" alt="bandiera della nazione">
-        </div>
-        <!-- v-for per ricavare la stampa delle stelle sia piene che vuote -->
-        <p>Voto: <i class="fas fa-star" v-for="i in item.stars"></i><i class="far fa-star" v-for="i in (5 - item.stars)"></i></p>
+        <div class="show">
+          <h3>Titolo: {{item.title}}</h3>
+          <p>Titolo originale: {{item.original_title}}</p>
+          <p>Lingua: {{item.original_language}}</p>
+          <!-- stampiamo a video la bandiera -->
+          <div v-for="(value, name, index) in flags">
+            <img v-if="name == item.original_language" :src="value" alt="bandiera della nazione">
+          </div>
+          <!-- v-for per ricavare la stampa delle stelle sia piene che vuote -->
+          <p>Voto: <i class="fas fa-star gold" v-for="i in item.stars"></i><i class="far fa-star gold" v-for="i in (5 - item.stars)"></i></p>
+          <p>Overview: {{item.overview}}</p>
+          </div>
       </div>
 
       <!-- apriamo un nuovo contenitore per le serie tv -->
       <!-- se non ci sono le cover dei film questi verranno esclusi dalla renderizzazione -->
       <div class="results" v-for="series in myNewseriesList" :class="(series.poster_path == null) ? 'displaynone' : ''">
         <img class="cover" :src="uriCover + series.poster_path" alt="cover della serie tv">
-
-        <h3>titolo: {{series.name}}</h3>
-        <p>Titolo originale: {{series.original_name}}</p>
-        <p>Lingua: {{series.original_language}}</p>
-        <!-- stampiamo a video la bandiera -->
-        <div v-for="(value, name, index) in flags">
-          <img v-if="name == series.original_language" :src="value" alt="bandiera della nazione">
+        <div class="show">
+          <h3>titolo: {{series.name}}</h3>
+          <p>Titolo originale: {{series.original_name}}</p>
+          <p>Lingua: {{series.original_language}}</p>
+          <!-- stampiamo a video la bandiera -->
+          <div v-for="(value, name, index) in flags">
+            <img v-if="name == series.original_language" :src="value" alt="bandiera della nazione">
+          </div>
+          <p>Voto: <i class="fas fa-star gold" v-for="i in series.stars"></i><i class="far fa-star gold" v-for="i in (5 - series.stars)"></i></p>
+          <p>Overview: {{series.overview}}</p>
         </div>
-        <p>Voto: <i class="fas fa-star" v-for="i in series.stars"></i><i class="far fa-star" v-for="i in (5 - series.stars)"></i></p>
       </div>
 
     </main>
