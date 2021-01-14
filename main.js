@@ -67,6 +67,7 @@ let app = new Vue({
           return item.stars = x
         });
 
+          
       })
 
       // la milestone 3 non contiene methods!
