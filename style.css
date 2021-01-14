@@ -43,6 +43,10 @@ input{
   margin-right: 20px;
 }
 
+p, h3{
+  width: 350px;
+}
+
 
 
 .results{
@@ -51,4 +55,8 @@ input{
 
 .displaynone{
   display: none;
+}
+
+.cover{
+  border: 3px solid white;
 }
