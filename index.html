@@ -15,8 +15,8 @@
     <header>
       <div class="container">
         <h2 class="logo">Boolflix</h2>
-        <button @click="getList">Search</button>
-        <input type="text" v-model="movie">
+        
+        <input type="text" v-model="movie" @keyup.enter="getList">
       </div>
     </header>
 
