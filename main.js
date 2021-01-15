@@ -67,10 +67,24 @@ let app = new Vue({
           return item.stars = x
         });
 
-          
+
       })
 
-      // la milestone 3 non contiene methods!
+
+    },
+
+    // creiamo una funzione per iterare tra le bandierine del nostro oggetto;
+    // se troviamo il nome della bandiera allora non la stampiamo a video perchè
+    // in quel caso ci sarà la bandierina come immagine e il testo non serve; 
+    checkFlag(item){
+      let key
+      for (key in this.flag) {
+        if (key == item) {
+          return true
+        } else {
+          return false
+        }
+      }
     }
 
   }

@@ -29,7 +29,7 @@
         <div class="show">
           <h3>Titolo: {{item.title}}</h3>
           <p>Titolo originale: {{item.original_title}}</p>
-          <p>Lingua: {{item.original_language}}</p>
+          <p v-if="checkFlag(item.original_language) == false">Lingua: {{item.original_language}}</p>
           <!-- stampiamo a video la bandiera -->
           <div v-for="(value, name, index) in flags">
             <img v-if="name == item.original_language" :src="value" alt="bandiera della nazione">
