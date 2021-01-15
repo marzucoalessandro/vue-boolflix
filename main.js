@@ -25,8 +25,8 @@ let app = new Vue({
        es: "https://flagcdn.com/w80/es.png"
       },
       // milestone 3
-      uriCover: "https://image.tmdb.org/t/p/w342"
-
+      uriCover: "https://image.tmdb.org/t/p/w342",
+      hovered: false
   },
 
   methods: {
@@ -73,19 +73,7 @@ let app = new Vue({
 
     },
 
-    // creiamo una funzione per iterare tra le bandierine del nostro oggetto;
-    // se troviamo il nome della bandiera allora non la stampiamo a video perchè
-    // in quel caso ci sarà la bandierina come immagine e il testo non serve; 
-    checkFlag(item){
-      let key
-      for (key in this.flag) {
-        if (key == item) {
-          return true
-        } else {
-          return false
-        }
-      }
-    }
+
 
   }
 

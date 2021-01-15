@@ -9,8 +9,8 @@ body {
 
   height: 100vh;
   background-color: grey;
-
 }
+
 
 
 main{
@@ -44,9 +44,7 @@ p, h3{
   color: white;
   margin-bottom: 10px;
 }
-p{
-  
-}
+
 
 
 
@@ -70,7 +68,19 @@ p{
 
 .show{
   position: absolute;
-  top: 55px;
-  left: 60px;
-  /* display: none; */
+  top: 33px;
+  left: 53px;
+  background-color: black;
+  width: 342px;
+  heigth: 215px;
+  height: 513px;
+  padding: 20px;
+  display: none;
+}
+.displayshow{
+  display: block;
+}
+
+.results:hover .show{
+display:block;
 }
