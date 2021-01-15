@@ -6,17 +6,13 @@
 }
 
 body {
-  /* width: 100vh; */
+
   height: 100vh;
   background-color: grey;
 
 }
 
-header {
-  /* width: 100%;
-  height: 70px; */
-  ;
-}
+
 main{
   display: flex;
   flex-direction: row;
@@ -71,7 +67,7 @@ p, h3{
 
 .show{
   position: absolute;
-  top: 100px;
-  left: 35px;
-  display: none;
+  top: 55px;
+  left: 60px;
+  /* display: none; */
 }
