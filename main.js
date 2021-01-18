@@ -61,6 +61,15 @@ let app = new Vue({
         });
       })
     },
+    checkLength(item){
+      let newItem;
+      if (item.length > 600) {
+        newItem = item.slice(0, 600).concat("...")
+        return newItem
+      } else {
+        return item
+      }
+    }
 
   }
 });
