@@ -26,7 +26,7 @@ let app = new Vue({
       },
       // milestone 3
       uriCover: "https://image.tmdb.org/t/p/w342",
-      hovered: false
+      imgNotAvail: "https://www.malaco.com/wp-content/uploads/2016/06/no-photo-available-black-profile.jpg"
   },
 
   methods: {
@@ -38,20 +38,15 @@ let app = new Vue({
       // a qst punto la funzione fa una richiesta API
       axios.get(this.newFilmSearch)
       .then(item => {
-
         let result = item.data.results
         this.myNewFilmList = result
-
-        // milestone 2
+        // ****************milestone 2*****************
         // andiamo a trasformare il ns voto da decimale a intero;
         this.myNewFilmList.forEach(item => {
           let x = Math.ceil(item.vote_average / 2);
           return item.stars = x
         });
       })
-
-
-
       // nuova richiesta ad axios per le serie tv;
       // trasformiamo in stringa di ricerca uri + apiKey + query + movie
       this.newSeriesTvSearch = this.uriSeries + this.apiKey + this.query + this.movie;
@@ -59,22 +54,13 @@ let app = new Vue({
       .then(response => {
         let result = response.data.results
         this.myNewseriesList = result
-
-
         // andiamo a trasformare il ns voto da decimale a intero;
         this.myNewseriesList.forEach(item => {
           let x = Math.ceil(item.vote_average / 2);
           return item.stars = x
         });
-
-
       })
-
-
     },
 
-
-
   }
-
 });

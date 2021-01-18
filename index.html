@@ -15,7 +15,7 @@
     <header>
       <div class="container">
         <h2 class="logo">Boolflix</h2>
-        
+
         <input type="text" v-model="movie" @keyup.enter="getList">
       </div>
     </header>
@@ -24,13 +24,13 @@
     <main>
       <!-- creiamo una semplice lista per stampare i valori che ci interessano -->
       <!-- se non ci sono le copertine dei nostri film questi verranno esclusi dalla renderizzazione -->
-      <div class="results" v-for="item in myNewFilmList" :class="(item.poster_path == null) ? 'displaynone' : ''">
-        <img class="cover" :src="uriCover + item.poster_path" alt="cover del film" >
+      <div class="results" v-for="item in myNewFilmList">
+        <img  class="not_avail cover" v-if="item.poster_path == null" :src="imgNotAvail" alt="">
+        <img v-else class="cover" :src="uriCover + item.poster_path" alt="cover del film" >
         <div class="show">
           <h3>Titolo: {{item.title}}</h3>
           <p>Titolo originale: {{item.original_title}}</p>
           <p>Lingua: {{item.original_language}}</p>
-
           <!-- stampiamo a video la bandiera -->
           <div v-for="(value, name, index) in flags">
             <img v-if="name == item.original_language" :src="value" alt="bandiera della nazione">
@@ -38,7 +38,7 @@
           <!-- v-for per ricavare la stampa delle stelle sia piene che vuote -->
           <p>Voto: <i class="fas fa-star gold" v-for="i in item.stars"></i><i class="far fa-star gold" v-for="i in (5 - item.stars)"></i></p>
           <p>Overview: {{item.overview}}</p>
-          </div>
+        </div>
       </div>
 
       <!-- apriamo un nuovo contenitore per le serie tv -->

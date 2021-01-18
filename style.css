@@ -72,7 +72,7 @@ p, h3{
   left: 3px;
   background-color: black;
   width: 342px;
-  heigth: 215px;
+
   height: 514px;
   padding: 20px;
   display: none;
@@ -83,4 +83,9 @@ p, h3{
 
 .results:hover .show{
 display:block;
+}
+
+.not_avail{
+  width: 349px;
+  height: 520px;
 }
