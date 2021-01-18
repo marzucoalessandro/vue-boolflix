@@ -18,7 +18,7 @@ let app = new Vue({
     newFilmSearch: "",
     newSeriesTvSearch: "",
     flags:
-      {us: "https://flagcdn.com/w80/us.png",
+      {
        en: "https://flagcdn.com/w80/gb.png",
        it: "https://flagcdn.com/w80/it.png",
        fr: "https://flagcdn.com/w80/fr.png",
@@ -69,7 +69,15 @@ let app = new Vue({
       } else {
         return item
       }
-    }
-
+    },
+    isPresent(item){
+      for (var key in this.flags) {
+        if (this.flags.hasOwnProperty(item)) {
+          return ""
+        } else {
+          return item
+        }
+      }
+    },
   }
 });

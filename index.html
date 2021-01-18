@@ -30,7 +30,7 @@
         <div class="show">
           <h3>Titolo: {{item.title}}</h3>
           <p>Titolo originale: {{item.original_title}}</p>
-          <p>Lingua: {{item.original_language}}</p>
+          <p>Lingua: {{isPresent(item.original_language)}}</p>
           <!-- stampiamo a video la bandiera -->
           <div v-for="(value, name, index) in flags">
             <img v-if="name == item.original_language" :src="value" alt="bandiera della nazione">
@@ -49,7 +49,7 @@
         <div class="show">
           <h3>titolo: {{series.name}}</h3>
           <p>Titolo originale: {{series.original_name}}</p>
-          <p>Lingua: {{series.original_language}}</p>
+          <p>Lingua: {{isPresent(series.original_language)}}</p>
           <!-- stampiamo a video la bandiera -->
           <div v-for="(value, name, index) in flags">
             <img v-if="name == series.original_language" :src="value" alt="bandiera della nazione">
