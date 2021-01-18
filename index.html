@@ -43,8 +43,9 @@
 
       <!-- apriamo un nuovo contenitore per le serie tv -->
       <!-- se non ci sono le cover dei film questi verranno esclusi dalla renderizzazione -->
-      <div class="results" v-for="series in myNewseriesList" :class="(series.poster_path == null) ? 'displaynone' : ''">
-        <img class="cover" :src="uriCover + series.poster_path" alt="cover della serie tv">
+      <div class="results" v-for="series in myNewseriesList">
+        <img  class="not_avail cover" v-if="series.poster_path == null" :src="imgNotAvail" alt="">
+        <img v-else class="cover" :src="uriCover + series.poster_path" alt="cover della serie tv">
         <div class="show">
           <h3>titolo: {{series.name}}</h3>
           <p>Titolo originale: {{series.original_name}}</p>
